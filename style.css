@@ -1,0 +1,117 @@
+@font-face {
+    font-family: Inter;
+    src: url("https://your-font-file-host/inter.css");
+}
+
+/* Affects everything */
+* {
+    box-sizing: border-box;
+    font-family: 'Inter var', sans-serif;
+
+}
+
+body {
+    font-family: 'Inter var', sans-serif;
+    color: #FAF9F6;
+    text-align: center;    
+
+    background-color: #131313;
+}
+
+button {
+    background-color: #FAF9F6;
+    text-decoration: #0f0f0f;
+    font-weight: bold;
+    border-radius: 10%;
+}
+
+/* Headers on pages */
+h1 {
+    font-family: 'Inter var', sans-serif;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 10%;
+    font-size: 50px;
+}
+
+/* All buttons */
+a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    fill: #FAF9F6;
+}
+
+.twoColumnContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.description {
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: left;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #FAF9F6;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    position: sticky;
+    border-radius: 100px;
+    z-index: 9999;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+    max-width: 2800px;
+
+    margin: 0 auto;
+    padding: 0 50px; /* Left and right padding */
+}
+
+.nameLogo {
+    font-weight: bold;
+    font-size: 20px;
+    color: #0f0f0f;
+    text-decoration: none;
+
+    align-content: center;
+    text-decoration: none;
+}
+
+.images {
+    width: 40%;
+    height: auto;
+}
+
+.navbarMenu {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    text-align: center;
+}
+
+.menuButton {
+    font-weight: bold;
+    font-size: 20px;
+    color: #0f0f0f;
+    text-decoration: none;
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 10px;
+}
