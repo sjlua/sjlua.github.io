@@ -1,24 +1,50 @@
+/* ----- GENERAL ----- */
+
 @font-face {
     font-family: Inter;
     src: url("https://your-font-file-host/inter.css");
 }
 
-/* Affects everything */
-* {
+* { /* Affects everything */
     box-sizing: border-box;
     font-family: 'Inter var', sans-serif;
+}
 
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Inter var', sans-serif;
     color: #FAF9F6;
     text-align: center;    
-
     background-color: #131313;
 }
 
-button {
+img {
+    width: 40%;
+    height: auto;
+}
+
+/* ----- LAYOUT CONTAINERS ----- */
+
+.twoColumnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10vw;
+}
+
+.centerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40%;
+}
+
+/* ----- BUTTONS ----- */
+
+.githubButton {
     background-color: #FAF9F6;
     color: #131313;
     font-size: 14px;
@@ -27,18 +53,9 @@ button {
     border-radius: 14px;
 }
 
-button:hover {
+.githubButton:hover {
     background-color: #131313;
     color: #FAF9F6;
-}
-
-/* Headers on pages */
-h1 {
-    font-family: 'Inter var', sans-serif;
-    font-weight: bold;
-    text-align: left;
-    padding-left: 10%;
-    font-size: 50px;
 }
 
 .arrow {
@@ -50,27 +67,21 @@ h1 {
     font-size: 40px;
 }
 
-/* All buttons */
-a:hover {
+.arrow:hover, .navbarButton:hover {
+    color: #404040;
     text-decoration: underline;
+    text-underline-offset: 5px;
+    transition: all 300ms ease;
 }
 
-.logo {
-    fill: #FAF9F6;
-}
+/* ----- PAGE HEADERS ----- */
 
-.twoColumnContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 50px;
-}
-
-.centerContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 40%;
+.pageTitle {
+    font-family: 'Inter var', sans-serif;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 10%;
+    font-size: 50px;
 }
 
 .description {
@@ -79,43 +90,46 @@ a:hover {
     text-align: left;
 }
 
-/* Navbar */
-.navbar {
-    background-color: #FAF9F6;
-    height: 40px;
+.headerImg {
+    padding-right: 5vw;
+}
+
+/* ----- NAVBAR ----- */
+
+.navPadding {
+    padding-top: 7vh;
+}
+
+.navbarDesktop {
     display: flex;
+    background-color: #FAF9F6;
+    border-radius: 100px;
+    height: 7vh;
+    font-size: 1rem;
+
+    z-index: 9999;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
-    position: sticky;
-    border-radius: 100px;
-    z-index: 9999;
+    position: fixed;
+    width: 98.5%;
 }
 
-.container {
+.navbarDesktopContainer {
     display: flex;
     justify-content: space-between;
-    height: 80px;
     width: 100%;
     max-width: 2800px;
-
     margin: 0 auto;
-    padding: 0 40px; /* Left and right padding */
+    padding: 0 2vw; /* X Y Z */
+    z-index: 1;
 }
 
-.nameLogo {
+.navbarLogo {
     font-weight: bold;
     font-size: 20px;
     color: #0f0f0f;
     text-decoration: none;
-
     align-content: center;
-    text-decoration: none;
-}
-
-.images {
-    width: 40%;
-    height: auto;
 }
 
 .navbarMenu {
@@ -123,18 +137,105 @@ a:hover {
     align-items: center;
     list-style-type: none;
     text-align: center;
+    gap: 1.5rem;
 }
 
-.menuButton {
+.navbarButton {
     font-weight: bold;
     font-size: 20px;
     color: #0f0f0f;
     text-decoration: none;
+}
 
-    display: flex;
-    text-align: center;
-    justify-content: center;
+/* ----- HAMBURGER MENU ----- */
+
+.hamburgerNav {
+    display: none;
     align-items: center;
-    list-style: none;
+    justify-content: space-between;
+    height: 7vh;
+    padding: 0 3vw; /* X Y Z */
+}
+
+#hamburgerLogo {
+    color: #FAF9F6;
+}
+
+.hamburgerMenu {
+    position: relative;
+    display: inline-block;
+}
+
+.hamburgerIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.hamburgerIcon span {
+    width: 100%;
+    height: 4px;
+    background-color: #FAF9F6;
+    transition: all 0.3 ease-in-out;
+}
+
+/* The following turns the hamburger icon into a X symbol. */ 
+
+.hamburgerIcon.open span:first-child {
+    transform: rotate(45deg) translate(10px, 5px);
+
+}
+
+.hamburgerIcon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburgerIcon.open span:last-child {
+    transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburgerIcon span:first-child {
+    transform: none;
+}
+
+.hamburgerIcon span:first-child {
+    opacity: 1;
+}
+
+.hamburgerLinks {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #131313;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3 ease-in-out;
+}
+
+.hamburgerLinks a {
+    display: block;
     padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #FAF9F6;
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+}
+
+.hamburgerLinks li {
+    list-style: none;
+}
+
+.hamburgerLinks.open {
+    max-height: 300px;
+}
+
+/* ----- FOOTER ----- */
+
+.footerIcons {
+    fill: #FAF9F6;
 }
