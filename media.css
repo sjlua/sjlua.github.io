@@ -6,4 +6,14 @@
     .hamburgerNav {
         display: flex;
     }
+
+    .twoColumnContainer {
+        display: block
+
+    }
+
+    .headerImg {
+        padding-right: 0%;
+        padding-top: 10%;
+    }
 }
