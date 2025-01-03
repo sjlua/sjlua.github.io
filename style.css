@@ -19,11 +19,25 @@ body {
     color: #FAF9F6;
     text-align: center;    
     background-color: #0C0C0C;
+    min-height: 100%;
 }
 
 img {
     width: 40%;
     height: auto;
+}
+
+footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #0f0f0f;
+    color: #FAF9F6;
+    text-align: center;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* ----- LAYOUT CONTAINERS ----- */
@@ -39,6 +53,11 @@ img {
     justify-content: center;
     align-items: center;
     gap: 1%;
+}
+
+/* -----  Special footer for about page, due to bottom anchoring issues ----- */
+.footerContainerAbout {
+    position: absolute;
 }
 
 /* ----- BUTTONS ----- */
@@ -97,21 +116,6 @@ img {
     padding-right: 5%;
 }
 
-/* ----- TEXT CUSTOMISATION ----- */
-
-.projectText {
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
-#comingsoon {
-    font-family: 'Inter var', sans-serif;
-    font-weight: bold;
-    font-size: x-large;
-    color: #ffffff;
-    text-decoration: none;
-}
-
 /* ----- NAVBAR ----- */
 
 .navPadding {
@@ -123,14 +127,16 @@ img {
     background: rgba(250, 250, 250, 0.8);
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
-    border-radius: 100px;
+    border-radius: 54vw;
     height: 7vh;
-    font-size: 1rem;
+    width: 98%;
+    /* font-size: 1rem; */
+    box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.2);
 
     align-items: center;
     justify-content: center;
     position: fixed;
-    width: 98.5%;
+
 }
 
 .navbarDesktopContainer {
@@ -256,6 +262,21 @@ img {
 
 .hamburgerLinks.open {
     max-height: 300px;
+}
+
+/* ----- SPECIFIC TEXT CUSTOMISATION ----- */
+
+.projectText:hover {
+    text-decoration: underline;
+    text-underline-offset: 1mm;
+}
+
+#comingsoon {
+    font-family: 'Inter var', sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+    color: #ffffff;
+    text-decoration: none;
 }
 
 /* ----- FOOTER ----- */
