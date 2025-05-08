@@ -1,5 +1,6 @@
 # Personal website
-I created this website to learn some of the basics behind HTML, CSS and JavaScipt. 
+This website was originally created back in 2024, to learn some of the basics behind HTML, CSS and JavaScript.
 
-## Visit the website at the link below
-[The Portfolio](https://sjlua.github.io/)
+## Visit my website at the links below
+[The Original Site](https://sjlua.github.io/)
+[The New Page](https://sjlua.dev/)
