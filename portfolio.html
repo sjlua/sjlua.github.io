@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
 
     <title>Sean Lua: Portfolio</title>
     <link rel="icon" href="images/DrJosef.jpg">
@@ -12,75 +15,72 @@
 </head>
 
 <body>
-    <!-- Desktop Navbar -->
-    <nav class="navbarDesktop">
-        <div class="navbarDesktopContainer">
-            <a href="https://sjlua.github.io" class="navbarLogo">Sean Josef Lua</a>
-            <ul class="navbarMenu">
-                <li><a href="about" class="navbarButton">ABOUT</a></li>
-                <li><a href="portfolio" class="navbarButton">PORTFOLIO</a></li>
-                <li><a onclick="location.href='https://sjlua.dev'" class="navbarButton">V2</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Unified Navbar -->
+    <nav class="navbarWrap">
 
-    <!-- Mobile Navbar -->
-    <nav class="hamburgerNav">
-        <a href="index" class="navbarLogo" id="hamburgerLogo">SJ Lua</a>
-        <div class="hamburgerMenu">
-            <div class="hamburgerIcon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+        <!-- Organises the inner layout of SJ Lua + More icon -->
+        <div class="navbarContainer">
+            
+            <!-- SJ Lua -->
+            <a href="https://sjlua.github.io" class="jetbrains-mono-normal navbarLogo">SJ Lua</a>
+
+            <!-- More icon, and its entries -->
+            <div class="hamburgerMenu">
+                <div class="hamburgerIcon" onclick="toggleMenu()">
+                    <span id="line1"></span>
+                    <span id="line2"></span>
+                    <span id="line3"></span>
+                </div>
+
+                <ul class="hamburgerLinks">
+                    <li><a class="jetbrains-mono-normal navbarButton" href="about" onclick="toggleMenu()">ABOUT</a></li>
+                    <li><a id="portfolioBtn" class="jetbrains-mono-normal navbarButton" href="portfolio" onclick="toggleMenu()">PORTFOLIO</a></li>
+                </ul>
             </div>
-            <ul class="hamburgerLinks">
-                <li><a href="about" onclick="toggleMenu()">ABOUT</a></li>
-                <li><a href="portfolio" onclick="toggleMenu()">PORTFOLIO</a></li>
-            </ul>
+
         </div>
+
     </nav>
 
-    <div class="navPadding">
-        <!-- Filler so that the content isn't blocked by the navigation bar -->
-    </div>
+    <!-- Body wrap -->
+    <div class="bodyWrap">
 
-    <br>
-    <br>
-
-    <div class="twoColumnContainer">
-        <div class="header">
-            <h1 class="pageTitle" id="portfolio">Portfolio</h1>
-            <p class="description">These are some of the projects I have developed over the years.</p>
+        <div class="twoColumnContainer">
+            <div class="headerText">
+                <h1 class="jetbrains-mono-normal pageTitle" id="portfolio">Portfolio</h1>
+                <p class="description">Every single (open-source) project I have made, ever.</p>
+            </div>
+            <img class="headerImg" src="images/portfolio.jpg" alt="A photo of my laptop at a cafe in Japan.">
         </div>
-        <img class="headerImg" src="images/portfolio.jpg" alt="A photo of my laptop at a cafe.">
-    </div>
-    
-    <br>
-    <br>
         
-    <div class="project">
-        <h2>CLOCKWORK</h2>
-        <p class="projectText">This is CLOCKWORK, a reinvention of the NY Times' Wordle, adding a new factor that will force you to think fast - 3 minutes fast.</p>
-        <img class="projectImg" src="images/thumbnail-clockwork.png" alt="A photo of CLOCKWORK, the word was ATOLL.">
-        <br>
-        <br>
-        <div class="centerContainer">
-            <button class="projectButton" onclick="location.href='https://github.com/sjlua/clockwork'">View it on Github</button>
-            <button class="projectButton" onclick="location.href='https://sjlua.github.io/clockwork'">Play the game</button>
+        <!-- Python Playground -->
+        <div class="twoColumnContainer" id="bodyText">
+            <div class="bodyTextLeft">
+                <h1 id="projectTitle">Python Playground</h1>
+                <p class="description">When I started my degree and learned python, I thought it would be nice to create a repo of all the useful scripts that I had made.</p>
+                <button class="projectButton" onclick="location.href='https://github.com/sjlua/pythonPlayground'">View it on GitHub</button>
+            </div>
+            <img class="projectImg" src="images/thumbnail-py-playground.png" alt="A screenshot of Python Playground's GitHub README page.">
+        </div>
+
+        <!-- Clockwork -->
+        <div class="twoColumnContainer" id="bodyText">
+            <div class="bodyTextLeft">
+                <h1 id="projectTitle"><i>CLOCKWORK</i></h1>
+                <p class="description">In 2024, I began learning HTML, CSS, and JavaScript, by coding my own take on the NY Times' WORDLE, aptly called CLOCKWORK. 
+                    This reinvention has a twist - you must finish in 3 minutes, or face defeat.</p>
+                <button class="projectButton" onclick="location.href='https://github.com/sjlua/clockwork'">View it on GitHub</button>
+                <button class="projectButton" onclick="location.href='https://sjlua.github.io/clockwork'">Play the game</button>
+            </div>
+            <img class="projectImg" src="images/thumbnail-clockwork.png" alt="A photo of CLOCKWORK, the word was ATOLL.">
+        </div>
+
+        <div class="project">
+            <h2>Coming soon...</h2>
+            <p class="mainText">I wonder what's cooking?</p>
+            <button class="projectButton" onclick="location.href='https://github.com/sjlua'">GitHub</button>
         </div>
     </div>
-
-    <br>
-    <br>
-
-    <div class="project">
-        <h2>Coming soon...</h2>
-        <p class="mainText">I wonder what's cooking?</p>
-        <button class="projectButton" onclick="location.href='https://github.com/sjlua'">Github</button>
-    </div>
-
-    <br>
-    <br>
        
     <footer id="footerContainer">
         <br>

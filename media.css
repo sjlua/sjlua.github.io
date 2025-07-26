@@ -1,10 +1,7 @@
 @media screen and (max-width: 800px){
-    .navbarDesktop {
-        display: none;
-    }
 
-    .hamburgerNav {
-        display: flex;
+    .navbarContainer {
+        padding: 0 4vw; /* X Y Z */
     }
 
     .twoColumnContainer {
@@ -12,8 +9,9 @@
 
     }
 
-    .headerImg {
-        padding-right: 0%;
-        padding-top: 10%;
+    img {
+        padding-top: 5vh;
+        width: 100%;
+        height: auto;
     }
 }

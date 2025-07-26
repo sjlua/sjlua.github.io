@@ -1,13 +1,7 @@
 /* ----- GENERAL ----- */
 
-@font-face {
-    font-family: Inter;
-    src: url("https://your-font-file-host/inter.css");
-}
-
 * { /* Affects everything */
     box-sizing: border-box;
-    font-family: 'Inter var', sans-serif;
 }
 
 html {
@@ -15,10 +9,17 @@ html {
 }
 
 body {
-    font-family: 'Inter var', sans-serif;
-    color: #FAF9F6;
-    text-align: center;    
-    background-color: #0C0C0C;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+    color: #0f0f0f;
+    background-color: #E6E5DC;
+
+    text-align: left;    
+    align-items: center;
+    justify-content: center;
     min-height: 100%;
 }
 
@@ -32,20 +33,28 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #0f0f0f;
-    color: #FAF9F6;
+    background-color: #E6E5DC;
+    color: #0f0f0f;
     text-align: center;
-    align-content: center;
-    margin-left: auto;
-    margin-right: auto;
+}
+
+/* ----- FONTS ----- */
+
+.jetbrains-mono-normal {
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 /* ----- LAYOUT CONTAINERS ----- */
 
 .twoColumnContainer {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 5%;
     align-items: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 .centerContainer {
@@ -55,39 +64,45 @@ footer {
     gap: 1%;
 }
 
-/* -----  Special footer for about page, due to bottom anchoring issues ----- */
-.footerContainerAbout {
-    position: absolute;
+.bodyWrap {
+    min-height: 100%;
+
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+
+    padding-left: 5vw;
+    padding-right: 5vw;
+
+    text-align: center;
+}
+
+/* This is mostly used to group multiple elements into one, so that two item-column combo works. */
+.bodyTextLeft {
+    justify-content: left;
+    text-align: left;
 }
 
 /* ----- BUTTONS ----- */
 
 .projectButton {
     background-color: #FAF9F6;
-    color: #131313;
+    color: #65558f;
     font-size: 14px;
     font-weight: bold;
     padding: 4px 8px;
     border-radius: 14px;
+    border-color: #65558f;
+    border-bottom-color: #65558f;
 }
 
 .projectButton:hover {
-    background-color: #0C0C0C;
+    background-color: #65558f;
     color: #FAF9F6;
     transition: all 200ms ease;
 }
 
-.arrow {
-    text-align: center;
-    text-decoration: none;
-    color: #FAF9F6;
-    padding: none;
-    font-weight: bold;
-    font-size: 40px;
-}
-
-.arrow:hover {
-    color: #fff5b4;
+.iconArrow:hover {
+    fill: #65558f;
     text-underline-offset: 5px;
     transition: all 200ms ease;
 }
@@ -95,106 +110,73 @@ footer {
 /* ----- PAGE HEADERS ----- */
 
 .pageTitle {
-    font-weight: bold;
-    text-align: left;
-    padding-left: 10%;
-    padding-right: 10%;
+    font-weight: 600;
     font-size: 50px;
-}
-
-.header{
-    flex: 50%
-}
-
-.subtitle {
-    padding-left: 10%;
     text-align: left;
 }
 
-.description {
-    padding-left: 10%;
-    padding-right: 10%;
+.subtitle, .description {
     text-align: left;
-}
-
-.headerImg {
-    padding-right: 5%;
 }
 
 /* ----- NAVBAR ----- */
 
-.navPadding {
-    padding-top: 7vh;
-}
-
-.navbarDesktop {
+.navbarWrap {
     display: flex;
+    position: fixed;
+    top: 1vh; 
+    left: 1%;
+    right: 1%;
+    width: 98%;
+
     background: rgba(250, 250, 250, 0.8);
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
     border-radius: 54vw;
     height: 7vh;
-    width: 98%;
-    /* font-size: 1rem; */
-    box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.2);
-
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-
+    max-width: 2850px;
+    box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.2);    
 }
 
-.navbarDesktopContainer {
+.navbarContainer {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    align-items: center;
+    width: 100%; /* Use all of the space inside the navbar wrap*/
     max-width: 2800px;
-    margin: 0 auto;
     padding: 0 2vw; /* X Y Z */
-    z-index: 1;
+    z-index: 1; /* Front of all the elements*/
 }
 
+/* SJ LUA */
 .navbarLogo {
-    font-weight: bold;
+    font-weight: 800;
     font-size: 20px;
-    color: #0C0C0C;
+
+    color: #0f0f0f;
     text-decoration: none;
-    align-content: center;
 }
 
 .navbarButton {
     font-weight: bold;
     font-size: 20px;
-    color: #0C0C0C;
+
+    color: #0f0f0f;
     text-decoration: none;
 }
 
 .navbarButton:hover, .navbarLogo:hover {
+    color: #65558f;
     text-decoration: underline;
     text-underline-offset: 1mm;
 }
 
-.navbarMenu {
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    text-align: center;
-    gap: 1.5rem;
+/* Hide the portfolio button until page has been completed. */
+#portfolioBtn {
+    display: none;
 }
 
 /* ----- HAMBURGER MENU ----- */
-
-.hamburgerNav {
-    display: none;
-    align-items: center;
-    justify-content: space-between;
-    height: 7vh;
-    padding: 0 3vw; /* X Y Z */
-}
-
-#hamburgerLogo {
-    color: #FAF9F6;
-}
 
 .hamburgerMenu {
     position: relative;
@@ -213,15 +195,18 @@ footer {
 .hamburgerIcon span {
     width: 100%;
     height: 4px;
-    background-color: #FAF9F6;
+    background-color: #0f0f0f;
     transition: all 0.3 ease-in-out;
+}
+
+.hamburgerIcon span:hover {
+    background-color: #65558f;
 }
 
 /* The following turns the hamburger icon into a X symbol. */ 
 
 .hamburgerIcon.open span:first-child {
     transform: rotate(45deg) translate(10px, 5px);
-
 }
 
 .hamburgerIcon.open span:nth-child(2) {
@@ -240,12 +225,12 @@ footer {
     opacity: 1;
 }
 
+/* ABOUT, PORTFOLIO when open */
 .hamburgerLinks {
     position: absolute;
-    top: 100%;
     right: 0;
-    background-color: #0C0C0C;
-    width: fit-content;
+    background-color: rgba(250, 250, 250, 0.8);
+    width: auto;
     max-height: 0;
     overflow: hidden;
     transition: all 0.3 ease-in-out;
@@ -253,10 +238,10 @@ footer {
 
 .hamburgerLinks a {
     display: block;
-    padding: 10px;
-    text-align: center;
+    padding: 1vh;
+    text-align: right;
     font-size: 1.5rem;
-    color: #FAF9F6;
+    color: #0f0f0f;
     text-decoration: none;
     transition: all 0.3 ease-in-out;
 }
@@ -276,21 +261,32 @@ footer {
     text-underline-offset: 1mm;
 }
 
-#comingsoon {
-    font-family: 'Inter var', sans-serif;
+.clsComingSoon {
     font-weight: bold;
     font-size: x-large;
-    color: #ffffff;
     text-decoration: none;
+    color: #0f0f0f;
+    
+    margin-top: 30vh;
+    margin-bottom: 30vh;
+}
+
+.clsComingSoon:hover {
+    color: #65558f;
+}
+
+#bodyText {
+    padding-top: 20vh;
+    padding-bottom: 20vh;
 }
 
 /* ----- FOOTER ----- */
 
 .footerIcons {
-    fill: #FAF9F6;
+    fill: #0f0f0f;
 }
 
 .footerIcons:hover {
-    fill: #447d3f;
+    fill: #65558f;
     transition: all 200ms ease;
 }
