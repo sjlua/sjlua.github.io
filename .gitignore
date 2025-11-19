@@ -2,3 +2,6 @@
 .idea
 /beta
 /v1
+
+# macOS indexing
+.DS_Store
