@@ -20,7 +20,7 @@
 
         <!-- Organises the inner layout of SJ Lua + More icon -->
         <div class="navbarContainer">
-            
+
             <!-- SJ Lua -->
             <!-- Returns to the root/original page -->
             <a href="/" class="jetbrains-mono-normal navbarLogo">SJ Lua</a>
@@ -35,7 +35,9 @@
 
                 <ul class="hamburgerLinks">
                     <li><a class="jetbrains-mono-normal navbarButton" href="about" onclick="toggleMenu()">ABOUT</a></li>
-                    <li><a id="portfolioBtn" class="jetbrains-mono-normal navbarButton" href="portfolio" onclick="toggleMenu()">PORTFOLIO</a></li>
+                    <li><a class="jetbrains-mono-normal navbarButton" href="/chronicles/" onclick="toggleMenu()">METAL CHRONICLES</a></li>
+                    <li><a class="jetbrains-mono-normal navbarButton" href="portfolio" onclick="toggleMenu()">PORTFOLIO</a></li>
+                    <li><a class="jetbrains-mono-normal navbarButton" href="https://sjlua.dev/dexern/" onclick="toggleMenu()">DEXERN</a></li>
                 </ul>
             </div>
 
@@ -53,29 +55,29 @@
                 <p class="description">I'm someone who likes to create stuff, a <em>lot</em> of stuff. Welcome! 안녕하세요!</p>
             </div>
             <img class="headerImg" alt="A picture of a minifigure named Doctor Josef." onclick="location.href='https://beta.sjlua.dev'" src="images/DrJosef.jpg">
-        </div> 
-        
+        </div>
+
         <!-- Arrow -->
         <svg class="iconArrow" onclick="location.href='#pokedex-rn'" xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#0f0f0f"><path d="m480-347.33 175.33-175.34-47.66-46.66L480-441.67 352.33-569.33l-47.66 46.66L480-347.33ZM480-80q-82.33 0-155.33-31.5-73-31.5-127.34-85.83Q143-251.67 111.5-324.67T80-480q0-83 31.5-156t85.83-127q54.34-54 127.34-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 82.33-31.5 155.33-31.5 73-85.5 127.34Q709-143 636-111.5T480-80Zm0-66.67q139.33 0 236.33-97.33t97-236q0-139.33-97-236.33t-236.33-97q-138.67 0-236 97-97.33 97-97.33 236.33 0 138.67 97.33 236 97.33 97.33 236 97.33ZM480-480Z"/></svg>
-        
+
         <!-- Pokédex -->
         <div class="twoColumnContainer">
             <div class="bodyTextLeft">
-                <h1 id="projectTitle" id="pokedex-rn">Pokédex RN</h1>
-                <p class="description">In late 2025, after trying Jetpack Compose to create Android apps, I decided to try React Native with Expo. 
-                    The idea of making multi-platform apps that felt native was quite attractive, so I began my first foray into React Native. 
+                <h1 class="projectTitle" id="pokedex-rn">Pokédex RN</h1>
+                <p class="description">In late 2025, after trying Jetpack Compose to create Android apps, I decided to try React Native with Expo.
+                    The idea of making multi-platform apps that felt native was quite attractive, so I began my first foray into React Native.
                     Not to mention I had already tried TypeScript thanks to FIT2102, so this was a nice chance to improve upon my web/scripting skills.
                 </p>
                 <button class="projectButton" onclick="location.href='https://github.com/sjlua/pokedex-rn'">View it on GitHub</button>
             </div>
-            <img class="projectImg" src="images/thumbnail-pokedex.jpg" alt="A screenshot of the Collection page. There's a 'Fly to another region' toggle, which has Galar currently selected. There's 6 Pokémon on screen, Grookey, Thwackey, Rillaboom, Scorbunny, Raboot and Cinderace (in that order). The app has a bottom tab bar containing Pokédex RN, Collections, Search, My Partner and App Info from left to right.">
+            <img class="projectImg" src="images/thumbnail-pokedex.jpg" alt="A placeholder photo of CLOCKWORK, the word was ATOLL.">
         </div>
 
         <!-- Clockwork -->
         <div class="twoColumnContainer">
             <div class="bodyTextLeft">
                 <h1 id="projectTitle2"><i>CLOCKWORK</i></h1>
-                <p class="description">In 2024, I began learning HTML, CSS, and JavaScript, by coding my own take on the NY Times' WORDLE, aptly called CLOCKWORK. 
+                <p class="description">In 2024, I began learning HTML, CSS, and JavaScript, by coding my own take on the NY Times' WORDLE, aptly called CLOCKWORK.
                     This reinvention has a twist - you must finish in 3 minutes, or face defeat.</p>
                 <button class="projectButton" onclick="location.href='https://github.com/sjlua/clockwork'">View it on GitHub</button>
                 <button class="projectButton" onclick="location.href='https://sjlua.github.io/clockwork'">Play the game</button>
@@ -83,7 +85,7 @@
             <img class="projectImg" src="images/thumbnail-clockwork.png" alt="A photo of CLOCKWORK, the word was ATOLL.">
         </div>
 
-        <a class="clsComingSoon" id="comingsoon" href="portfolio">More projects coming soon.</a>  
+        <a class="clsComingSoon" id="comingsoon" href="portfolio">More projects coming soon.</a>
 
     </div>
 
